@@ -1,0 +1,42 @@
+.main {
+    max-width: 1440px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right bottom, #FFF 50%, #FFF3EB 50%);    
+}
+
+.main_start {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.main_start h1 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 116%;
+}
+
+.main_start button {
+    width: 296px;
+    height: 64px;
+    background: #FF8B37;
+    border-radius: 12px;
+    color: #FFF;
+    border: none;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 116%;
+}
+
+.main_start button:hover {
+    background: #FFAC70;
+}
+
+.main_start button:active {
+    background: #E87928;
+}

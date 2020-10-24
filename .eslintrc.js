@@ -22,5 +22,9 @@ module.exports = {
         "react"
     ],
     "rules": {
+        "react/prop-types": "off",
+        "camelcase": "off",
+        "array-callback-return": "off",
+        "react/no-danger": "off"
     }
 };

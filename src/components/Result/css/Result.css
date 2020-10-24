@@ -1,0 +1,53 @@
+.result {
+    max-width: 1440px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F5F5F7;
+}
+
+.main_result {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.main_result h1 {
+    margin: 0;
+    margin-bottom: 100px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 116%;
+}
+
+.main_result h2 {
+    opacity: 0.5;
+    margin-bottom: 10px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 116%;
+}
+
+.main_result button {
+    width: 296px;
+    height: 64px;
+    background: #FF8B37;
+    border-radius: 12px;
+    color: #FFF;
+    border: none;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 116%;
+}
+
+.main_result button:hover {
+    background: #FFAC70;
+}
+
+.main_result button:active {
+    background: #E87928;
+}

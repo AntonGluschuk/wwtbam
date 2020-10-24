@@ -1,0 +1,115 @@
+.board {
+    display: flex;
+    min-height: 100vh;
+    /* align-items: center; */
+}
+
+.board__game {
+    width: 1100px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #E5E5E5;
+}
+
+.board__game h3 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.board__answers {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 200px;
+}
+
+.board__answers button {
+    display: flex;
+    align-self: start;
+    border: 1px solid #D0D0D8;
+    border-radius: 20px;
+    background-color: #fff;
+    width: 400px;
+    padding: 10px;
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 100%;
+    cursor: pointer;
+}
+
+.board__answers button:hover {
+    border: 1px solid #FF8B37;
+}
+
+.board__answers button:active {
+    background-color: #FFF3EB;
+    border: 1px solid #FF8B37;
+}
+
+#correct_answer {
+    background-color: #E6FAEA;
+    border: 1px solid #47D867;
+}
+
+#wrong_answer {
+    background-color: #FDEEED;
+    border: 1px solid #EC6259;
+}
+
+.board__answers span {
+    color: orange;
+    font-weight: 600;
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.board__answers p {
+    margin: 0;    
+    padding: 0;
+    font-weight: normal;
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.board__steps {
+    width: 249px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board__steps ul {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.board__steps ul li  {
+    margin-top: 8px;
+    padding: 5px 20px;
+    border: 1px solid #D0D0D8;
+    border-radius: 20px;
+    background-color: #fff;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 130%;
+}
+
+.finished_step {
+    color: #D0D0D8;
+}
+
+#current_step {
+    color: #FF8B37;
+    border: 1px solid #FF8B37;
+}
