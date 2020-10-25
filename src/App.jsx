@@ -1,12 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from 'react-router-dom';
 import './App.css';
-import Game from './components/Game/Game';
 import Result from './components/Result/Result';
 import Start from './components/Start/Start';
 
@@ -19,8 +12,10 @@ function App() {
   const [config, setConfig] = useState([]);
   const [questions, setQuestions] = useState([]);
   const [step, setStep] = useState(0);
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState(money[0]);
+  const [gameStart, setGameStart] = useState(false);
   const [gameEnd, setGameEnd] = useState(false);
+  const [showAnswer, setShowAnswer] = useState(undefined);
 
   useEffect(() => {
     fetch(APIURL)
@@ -38,36 +33,42 @@ function App() {
 
   const handleAnswer = (answer) => {
     const nextStep = step + 1;
-    setStep(nextStep);
     if (answer === questions[step].correct_answer) {
-      setScore(score + 1);
+      setShowAnswer('correct');
+      setTimeout(() => {
+        setStep(nextStep);
+        setScore(money[step]);
+      }, 1000);
+    } else if (answer !== questions[step].correct_answer || nextStep >= questions.length) {
+      setShowAnswer('wrong');
+      setTimeout(() => setGameEnd(true), 1000);
     }
-    if (nextStep >= questions.length) {
-      setGameEnd(true);
-    }
+    setTimeout(() => setShowAnswer(undefined), 1000);
   };
 
-  return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <Start />
-        </Route>
-        {config.length > 0 ? (
-          <Route path="/game">
-            <Game
-              config={config}
-              questions={questions[step]}
-              step={step}
-              handleAnswer={handleAnswer}
-            />
-          </Route>
-        ) : null}
-        <Route path="/result">
-          <Result result={score} />
-        </Route>
-      </Switch>
-    </Router>
+  const resetGame = () => {
+    setGameEnd(false);
+    setGameStart(false);
+    setScore(money[0]);
+    setStep(0);
+    setShowAnswer(0);
+  };
+  return gameEnd ? (
+    <div>
+      <Result result={score} resetGame={resetGame} />
+    </div>
+  ) : (
+    <div>
+      <Start
+        status={gameStart}
+        changeStatus={setGameStart}
+        config={config}
+        handleAnswer={handleAnswer}
+        questions={questions}
+        step={step}
+        showAnswer={showAnswer}
+      />
+    </div>
   );
 }
 

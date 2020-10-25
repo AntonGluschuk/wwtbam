@@ -4,15 +4,15 @@ import Questions from './Questions/Questions';
 
 function Game(props) {
   const {
-    config, questions, step, handleAnswer,
+    config, questions, step, handleAnswer, showAnswer,
   } = props;
   return (
     <div className="board">
-      {console.log(config, questions)}
       <Questions
         config={config}
         questions={questions}
         step={step}
+        showAnswer={showAnswer}
         handleAnswer={handleAnswer}
       />
     </div>

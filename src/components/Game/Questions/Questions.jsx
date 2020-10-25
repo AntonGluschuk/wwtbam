@@ -1,30 +1,34 @@
 import React from 'react';
 
 function Questions({
-  config: [letters, money,
-    {
-      answers, correct_answer,
-    },
-  ],
+  config: [letters, money],
   questions:
-    {
-      question,
-    },
+  {
+    question,
+    incorrect_answers,
+    correct_answer,
+  },
   step,
   handleAnswer,
+  showAnswer,
 }) {
-  const shakeAnswers = [...answers].sort(() => Math.random() - 0.5);
+  const shakeAnswers = [correct_answer, ...incorrect_answers].sort(() => Math.random() - 0.5);
   return (
     <div className="board">
       <main className="board__game">
         <h3 dangerouslySetInnerHTML={{ __html: question }} />
         <div className="board__answers">
-          {shakeAnswers.map((answer, idx) => (
-            <button key={letters[idx]} id={answer === correct_answer ? 'correct_answer' : ''} onClick={() => handleAnswer(answer)} type="submit">
-              <span>{letters[idx]}</span>
-              <p dangerouslySetInnerHTML={{ __html: answer }} />
-            </button>
-          ))}
+          {shakeAnswers.map((answer, idx) => {
+            const bgAnswer = showAnswer ? answer === correct_answer ? 'correct_answer'
+              : 'wrong_answer'
+              : null;
+            return (
+              <button key={letters[idx]} id={`${bgAnswer}`} onClick={() => handleAnswer(answer)} type="submit">
+                <span>{letters[idx]}</span>
+                <p dangerouslySetInnerHTML={{ __html: answer }} />
+              </button>
+            );
+          })}
         </div>
       </main>
       <aside className="board__steps">

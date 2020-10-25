@@ -25,6 +25,7 @@ module.exports = {
         "react/prop-types": "off",
         "camelcase": "off",
         "array-callback-return": "off",
-        "react/no-danger": "off"
+        "react/no-danger": "off",
+        "no-nested-ternary": "off"
     }
 };
