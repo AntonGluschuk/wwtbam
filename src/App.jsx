@@ -22,7 +22,6 @@ function App() {
       .then((resp) => resp.json())
       .then((data) => {
         setQuestions(data.results);
-        console.log(data.results);
         const handledData = data.results.map((singleData) => ({
           correct_answer: singleData.correct_answer,
           answers: [singleData.correct_answer, ...singleData.incorrect_answers],
@@ -54,11 +53,11 @@ function App() {
     setShowAnswer(0);
   };
   return gameEnd ? (
-    <div>
+    <>
       <Result result={score} resetGame={resetGame} />
-    </div>
+    </>
   ) : (
-    <div>
+    <>
       <Start
         status={gameStart}
         changeStatus={setGameStart}
@@ -68,7 +67,7 @@ function App() {
         step={step}
         showAnswer={showAnswer}
       />
-    </div>
+    </>
   );
 }
 

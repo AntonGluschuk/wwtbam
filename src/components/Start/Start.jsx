@@ -22,7 +22,7 @@ function Start(props) {
       </div>
     </div>
   ) : (
-    <div>
+    <>
       {config.length > 0 ? (
         <Game
           config={config}
@@ -32,7 +32,7 @@ function Start(props) {
           handleAnswer={handleAnswer}
         />
       ) : null}
-    </div>
+    </>
   );
 }
 

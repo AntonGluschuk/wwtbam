@@ -1,4 +1,5 @@
 import React from 'react';
+import './css/Questions.css';
 
 function Questions({
   config: [letters, money],
@@ -16,6 +17,7 @@ function Questions({
   return (
     <div className="board">
       <main className="board__game">
+        <button className="board__icon" type="button" aria-label="Open"><i className="fas fa-align-justify" /></button>
         <h3 dangerouslySetInnerHTML={{ __html: question }} />
         <div className="board__answers">
           {shakeAnswers.map((answer, idx) => {

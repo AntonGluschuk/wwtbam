@@ -1,12 +1,14 @@
 .board {
-    display: flex;
+    max-width: 1440px;
     min-height: 100vh;
+    display: flex;
     /* align-items: center; */
 }
 
 .board__game {
     width: 1100px;
     height: 100vh;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,10 +16,16 @@
     background-color: #E5E5E5;
 }
 
+.board__icon {
+    display: none;
+}
+
 .board__game h3 {
     font-style: normal;
     font-weight: 600;
     font-size: 1.2rem;
+    margin: 0 2rem;
+    text-align: center;
 }
 
 .board__answers {
@@ -35,7 +43,7 @@
     background-color: #fff;
     width: 400px;
     padding: 10px;
-    margin-top: 10px;
+    margin: 10px 5px;
     font-style: normal;
     font-weight: normal;
     font-size: 15px;
@@ -78,7 +86,7 @@
 }
 
 .board__steps {
-    width: 249px;
+    width: 376px;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -88,14 +96,13 @@
 .board__steps ul {
     display: flex;
     flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
+    list-style-type: none;
+    padding: 0;
 }
 
 .board__steps ul li  {
     margin-top: 8px;
-    padding: 5px 20px;
+    padding: 5px 50px;
     border: 1px solid #D0D0D8;
     border-radius: 20px;
     background-color: #fff;
@@ -103,6 +110,7 @@
     font-weight: normal;
     font-size: 15px;
     line-height: 130%;
+    text-align: center;
 }
 
 .finished_step {
@@ -112,4 +120,30 @@
 #current_step {
     color: #FF8B37;
     border: 1px solid #FF8B37;
+}
+
+
+
+@media screen and (max-width: 860px) {
+    .board__steps {
+        display: none;
+    }
+    .board__icon {
+        width: 10px;
+        height: 10px;
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .board__game {
+        width: 100%;
+    }
+    .board__answers button {
+        width: 100%;
+        margin: 10px 20px;
+    }
 }

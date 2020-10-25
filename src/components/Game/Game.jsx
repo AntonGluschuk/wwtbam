@@ -1,5 +1,4 @@
 import React from 'react';
-import './css/Game.css';
 import Questions from './Questions/Questions';
 
 function Game(props) {
@@ -7,7 +6,7 @@ function Game(props) {
     config, questions, step, handleAnswer, showAnswer,
   } = props;
   return (
-    <div className="board">
+    <>
       <Questions
         config={config}
         questions={questions}
@@ -15,7 +14,7 @@ function Game(props) {
         showAnswer={showAnswer}
         handleAnswer={handleAnswer}
       />
-    </div>
+    </>
   );
 }
 
