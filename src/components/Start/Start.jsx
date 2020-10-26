@@ -12,13 +12,15 @@ function Start(props) {
     questions,
     step,
     showAnswer,
+    showSide,
+    setShowSide,
   } = props;
   return !status ? (
     <div className="main">
-      <img src={handLogo} alt="hand" />
-      <div className="main_start">
-        <h1>Who wants to be a millionaire?</h1>
-        <button type="submit" onClick={() => changeStatus(true)}>Start</button>
+      <img className="main__img" src={handLogo} alt="hand" />
+      <div className="main__start">
+        <h1 className="main__start_title">Who wants to be a millionaire?</h1>
+        <button className="main__start_btn" type="submit" onClick={() => changeStatus(true)}>Start</button>
       </div>
     </div>
   ) : (
@@ -30,6 +32,8 @@ function Start(props) {
           step={step}
           showAnswer={showAnswer}
           handleAnswer={handleAnswer}
+          showSide={showSide}
+          setShowSide={setShowSide}
         />
       ) : null}
     </>

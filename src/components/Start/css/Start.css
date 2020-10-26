@@ -7,26 +7,26 @@
     background: linear-gradient(to right bottom, #FFF 50%, #FFF3EB 50%);    
 }
 
-.main img {
+.main__img {
     width: 60%;
     height: auto;
 }
 
-.main_start {
+.main__start {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin: 1.5rem;
 }
 
-.main_start h1 {
+.main__start_title {
     font-style: normal;
     font-weight: 600;
     font-size: 3rem;
     line-height: 116%;
 }
 
-.main_start button {
+.main__start_btn {
     width: 296px;
     height: 64px;
     background: #FF8B37;
@@ -39,11 +39,11 @@
     line-height: 116%;
 }
 
-.main_start button:hover {
+.main__start_btn:hover {
     background: #FFAC70;
 }
 
-.main_start button:active {
+.main__start_btn:active {
     background: #E87928;
 }
 
@@ -51,23 +51,23 @@
     .main {
         flex-direction: column;
     }
-    .main_start {
+    .main__start {
         align-items: center;
         justify-content: center;
     }
-    .main_start h1 {
+    .main__start_title {
         text-align: center;
     }
 }
 
 @media screen and (max-width: 620px) {
-    .main img {
+    .main__img {
         width: 100%;
     }
 }
 
 @media screen and (max-width: 280px) {
-    .main_start button {
+    .main__start_btn {
         width: 80%;
     }
 }

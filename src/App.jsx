@@ -16,6 +16,7 @@ function App() {
   const [gameStart, setGameStart] = useState(false);
   const [gameEnd, setGameEnd] = useState(false);
   const [showAnswer, setShowAnswer] = useState(undefined);
+  const [showSide, setShowSide] = useState(false);
 
   useEffect(() => {
     fetch(APIURL)
@@ -66,6 +67,8 @@ function App() {
         questions={questions}
         step={step}
         showAnswer={showAnswer}
+        showSide={showSide}
+        setShowSide={setShowSide}
       />
     </>
   );

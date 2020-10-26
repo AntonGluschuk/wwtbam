@@ -3,7 +3,8 @@ import Questions from './Questions/Questions';
 
 function Game(props) {
   const {
-    config, questions, step, handleAnswer, showAnswer,
+    config, questions, step, handleAnswer, showAnswer, showSide,
+    setShowSide,
   } = props;
   return (
     <>
@@ -13,6 +14,8 @@ function Game(props) {
         step={step}
         showAnswer={showAnswer}
         handleAnswer={handleAnswer}
+        showSide={showSide}
+        setShowSide={setShowSide}
       />
     </>
   );

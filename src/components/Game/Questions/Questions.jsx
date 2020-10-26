@@ -12,30 +12,33 @@ function Questions({
   step,
   handleAnswer,
   showAnswer,
+  showSide,
+  setShowSide,
 }) {
   const shakeAnswers = [correct_answer, ...incorrect_answers].sort(() => Math.random() - 0.5);
   return (
     <div className="board">
       <main className="board__game">
-        <button className="board__icon" type="button" aria-label="Open"><i className="fas fa-align-justify" /></button>
-        <h3 dangerouslySetInnerHTML={{ __html: question }} />
+        <button className="board__icon" type="button" aria-label="Open" onClick={() => setShowSide(!showSide)}>☰</button>
+        <h3 className="board__question" dangerouslySetInnerHTML={{ __html: question }} />
         <div className="board__answers">
           {shakeAnswers.map((answer, idx) => {
             const bgAnswer = showAnswer ? answer === correct_answer ? 'correct_answer'
               : 'wrong_answer'
               : null;
             return (
-              <button key={letters[idx]} id={`${bgAnswer}`} onClick={() => handleAnswer(answer)} type="submit">
-                <span>{letters[idx]}</span>
-                <p dangerouslySetInnerHTML={{ __html: answer }} />
+              <button className={`board__answer_btn ${bgAnswer}`} key={letters[idx]} onClick={() => handleAnswer(answer)} type="submit">
+                <span className="board__answer_letter">{letters[idx]}</span>
+                <p className="board__answer" dangerouslySetInnerHTML={{ __html: answer }} />
               </button>
             );
           })}
         </div>
       </main>
-      <aside className="board__steps">
-        <ul>
-          {money.map((stp, idx) => <li id={idx === step ? 'current_step' : ''} key={stp}>{stp}</li>)}
+      <aside className={`${showSide ? 'board__steps board__steps_active' : 'board__steps'}`}>
+        <button className="board__icon_close" type="button" aria-label="Open" onClick={() => setShowSide(!showSide)}>X</button>
+        <ul className="board__steps_list">
+          {money.map((stp, idx) => <li className={idx === step ? ' board__steps_item current_step' : 'board__steps_item'} key={stp}>{stp}</li>)}
         </ul>
       </aside>
     </div>
