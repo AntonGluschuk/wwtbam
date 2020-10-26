@@ -94,7 +94,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translateX(0);
 }
 
 .board__steps_list {

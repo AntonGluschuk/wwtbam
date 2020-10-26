@@ -1,20 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './css/Questions.css';
+import { GameContext } from '../../Context/Context';
 
-function Questions({
-  config: [letters, money],
-  questions:
-  {
+function Questions() {
+  const {
+    config,
+    step,
+    questions,
+    handleAnswer,
+    showAnswer,
+    showSide,
+    setShowSide,
+
+  } = useContext(GameContext);
+
+  const {
     question,
     incorrect_answers,
     correct_answer,
-  },
-  step,
-  handleAnswer,
-  showAnswer,
-  showSide,
-  setShowSide,
-}) {
+  } = questions[step];
+
+  const [letters, money] = config;
+
   const shakeAnswers = [correct_answer, ...incorrect_answers].sort(() => Math.random() - 0.5);
   return (
     <div className="board">
