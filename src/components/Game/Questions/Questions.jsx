@@ -23,8 +23,9 @@ function Questions() {
   const [letters, money] = config;
 
   const shakeAnswers = [correct_answer, ...incorrect_answers].sort(() => Math.random() - 0.5);
+
   return (
-    <div className="board">
+    <section className="board">
       <main className="board__game">
         <button className="board__icon" type="button" aria-label="Open" onClick={() => setShowSide(!showSide)}>☰</button>
         <h3 className="board__question" dangerouslySetInnerHTML={{ __html: question }} />
@@ -48,7 +49,7 @@ function Questions() {
           {money.map((stp, idx) => <li className={idx === step ? ' board__steps_item current_step' : 'board__steps_item'} key={stp}>{stp}</li>)}
         </ul>
       </aside>
-    </div>
+    </section>
   );
 }
 
