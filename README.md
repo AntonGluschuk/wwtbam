@@ -10,5 +10,9 @@ Project using [Trivia API](https://opentdb.com/api_config.php) for getting quest
 - Result page;
 - Responsive;
 
+### Bugs that need to be fixed:
+- Redundant re-render that produce a extra shake for answers;
+- Incorrect view of passed steps;
+
 ## Demo of the project 
 [Demo](https://antongluschuk.github.io/wwtbam_app/)
