@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/wwtbam_app/static/css/main.eca85243.chunk.css",
+    "main.js": "/wwtbam_app/static/js/main.e23d141f.chunk.js",
+    "main.js.map": "/wwtbam_app/static/js/main.e23d141f.chunk.js.map",
+    "runtime-main.js": "/wwtbam_app/static/js/runtime-main.4729f234.js",
+    "runtime-main.js.map": "/wwtbam_app/static/js/runtime-main.4729f234.js.map",
+    "static/js/2.2b876eff.chunk.js": "/wwtbam_app/static/js/2.2b876eff.chunk.js",
+    "static/js/2.2b876eff.chunk.js.map": "/wwtbam_app/static/js/2.2b876eff.chunk.js.map",
+    "index.html": "/wwtbam_app/index.html",
+    "precache-manifest.2437130b4fa9bc4e2b701b7976cbf38e.js": "/wwtbam_app/precache-manifest.2437130b4fa9bc4e2b701b7976cbf38e.js",
+    "service-worker.js": "/wwtbam_app/service-worker.js",
+    "static/css/main.eca85243.chunk.css.map": "/wwtbam_app/static/css/main.eca85243.chunk.css.map",
+    "static/js/2.2b876eff.chunk.js.LICENSE.txt": "/wwtbam_app/static/js/2.2b876eff.chunk.js.LICENSE.txt",
+    "static/media/hand1.png": "/wwtbam_app/static/media/hand1.f8c75481.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4729f234.js",
+    "static/js/2.2b876eff.chunk.js",
+    "static/css/main.eca85243.chunk.css",
+    "static/js/main.e23d141f.chunk.js"
+  ]
+}
